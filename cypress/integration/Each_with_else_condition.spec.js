@@ -25,7 +25,7 @@ describe('Set of tests for practice Each', ()=> {
                 $el.find('button').click() 
             }
             else{
-                cy.log('Its not Cashews!!!')
+                cy.log(vegeName)
             }
 
 
