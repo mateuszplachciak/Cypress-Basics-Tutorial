@@ -65,7 +65,7 @@ describe('Lets try assertions!',() =>{
 
         cy.get('.product')
         .find('.product-name')
-        .should('include.html' , 'Ceshews')
+        .should('include.html' , 'Cashews')
 
     } )
 }) 

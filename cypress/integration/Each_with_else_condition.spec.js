@@ -36,7 +36,10 @@ describe('Set of tests for practice Each', ()=> {
 
             cy.log(logo.text())
 
+            cy.get('[href="#/offers"]').text().log()
+
        }) 
+
 
     })
 
