@@ -22,10 +22,19 @@ describe('test suit to cover basic functions to interact with checkbxoes, and sh
         .wait(1000)
     })
 
-    it('grabbing text from label in checboxes',()=>{
+    it('Grabing all Checkboxes and make actions on chosen ones',() => {
+        // Locator besed on type without arguments will on check() method will checked all from checkboxes
+        cy.get("input[type='checkbox']")
+        .check(['option2', 'option3'])
+    })
 
-        cy.get('#checkbox-example').find('label').should('include.html', 'Option1')
-
+    it('grabbing text from label in checboxes, and check the one chosen by text',()=>{
+        cy.get('#checkbox-example')
+        .find('label')
+        .contains('Option1')
+        .should('include.html', 'Option1')
+        .find('[type="checkbox"]')
+        .check()
     })
 
 })

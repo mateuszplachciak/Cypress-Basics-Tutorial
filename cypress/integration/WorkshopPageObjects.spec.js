@@ -15,7 +15,9 @@ describe('Test of shop Flow',() => {
         product.addProduct('Carrot')
         product.addProduct('Beans')
         product.addProduct('Capsicum')
-        product.checkCart(3)
+        product.addProduct('Musk Melon')
+        product.addProduct('Water Melon')
+        product.checkCart(5)
     })
     
 })

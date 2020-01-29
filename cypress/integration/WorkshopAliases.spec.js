@@ -29,7 +29,40 @@ describe('Test of shop Flow',() => {
 
         cy.get('.product')
         .find('.product-name')
+        .as('productName')
         .should('include.html', 'Carrot')
+
+        cy.get('@addProduct')
+        .click()
+
+        //////////////////////////////
+
+        cy.get('@search')
+        .type('{selectAll}capsicum')
+        .wait(1000)
+
+        cy.get('@productName')
+        .should('include.html', 'Capsicum' )
+
+        cy.get('@addProduct')
+        .click()
+
+        cy.get('@search')
+        .type('{selectAll}Musk Melon')
+        .wait(1000)
+
+        cy.get('@productName')
+        .should('include.html', 'Musk Melon' )
+
+        cy.get('@addProduct')
+        .click()
+
+        cy.get('@search')
+        .type('{selectAll}Water Melon')
+        .wait(1000)
+
+        cy.get('@productName')
+        .should('include.html', 'Water Melon' )
 
         cy.get('@addProduct')
         .click()
@@ -39,7 +72,7 @@ describe('Test of shop Flow',() => {
         .wait(500)
         cy.get('ul.cart-items')
         .find('.cart-item:visible')
-        .should('have.length', 2)
+        .should('have.length', 5)
         
     })
     

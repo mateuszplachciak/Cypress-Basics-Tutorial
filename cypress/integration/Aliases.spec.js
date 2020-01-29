@@ -14,5 +14,9 @@ describe('Test of shop Flow',() => {
         cy.get('@productName').should('include.html', 'Carrot')
         cy.get('@addProduct').click()
     })
-    
+    it('Check',() => {
+        cy.get('@search').type('{selectAll}Carrot').wait(1000)
+        cy.get('@productName').should('include.html', 'Carrot')
+        cy.get('@addProduct').click()
+    })
 })
