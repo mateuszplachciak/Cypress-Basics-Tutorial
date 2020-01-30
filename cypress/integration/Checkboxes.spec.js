@@ -37,4 +37,15 @@ describe('test suit to cover basic functions to interact with checkbxoes, and sh
         .check()
     })
 
+    it('Radio',() => {
+        cy.get('input[type="radio"]')
+        .check('radio1')
+        
+        cy.get('[for="radio2"]')
+        .find('.radioButton')
+        .check()
+        
+
+    })
+
 })

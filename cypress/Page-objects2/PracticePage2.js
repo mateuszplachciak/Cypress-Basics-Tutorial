@@ -20,3 +20,25 @@ export class Checkboxes {
         .and('have.value',option)
     }
 }
+
+export class Menu{
+    dynamicDropdown(searchWord , letters){
+        it('Dynamic dropdown function to iterate through possible elements',() => {
+            cy.get('#autocomplete')
+            .type(letters)
+            cy.get('.ui-menu-item div')
+            .each((name) =>{
+                if(name.text()===searchWord){
+                    name.click()
+                }
+            })
+            cy.get('#autocomplete').should('have.value', searchWord)
+        })
+    }
+    staticDropdown(value){
+        it('Select command for static dropdown menu',() => {
+            cy.get('select').select(value).should('have.value', value)
+        })
+    }
+}
+
